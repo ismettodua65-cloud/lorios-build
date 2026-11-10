@@ -1,0 +1,8 @@
+[Plymouth Theme]
+Name=LoriOS
+Description=LoriOS boot splash
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/lorios
+ScriptFile=/usr/share/plymouth/themes/lorios/lorios.script
