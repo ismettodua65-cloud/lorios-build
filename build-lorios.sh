@@ -1,3 +1,4 @@
+
 #!/usr/bin/env bash
 # LoriOS builder: Debian 13 (trixie) + XFCE, Windows-like look, boot splash with logo and spinner
 # Keep this script together with the folder plymouth-lorios/ and wallpaper.png
@@ -66,9 +67,6 @@ calamares
 calamares-settings-debian
 sudo
 grub-pc
-grub-efi-amd64
-shim-signed
-efibootmgr
 os-prober
 cryptsetup
 rsync
