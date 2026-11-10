@@ -1,4 +1,5 @@
 name: Build LoriOS
+
 on:
   workflow_dispatch:
 
@@ -8,6 +9,7 @@ jobs:
     container:
       image: debian:trixie
       options: --privileged
+
     steps:
       - uses: actions/checkout@v4
 
@@ -22,3 +24,9 @@ jobs:
           mkdir -p out
           cp /root/lorios/*.iso /root/lorios/*.img /root/lorios/*.sha256 out/
           ls -lh out
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Lorios-ISO
+          path: out/*
