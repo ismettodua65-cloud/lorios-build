@@ -16,6 +16,8 @@ lb config \
   --distribution trixie \
   --architectures amd64 \
   --archive-areas "main non-free-firmware" \
+  --parent-mirror-security https://security.debian.org/debian-security/ \
+--parent-mirror-chroot-security https://security.debian.org/debian-security/ \
   --apt-recommends false \
   --binary-images iso-hybrid \
   --debian-installer none \
