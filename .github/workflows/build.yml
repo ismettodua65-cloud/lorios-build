@@ -1,0 +1,29 @@
+name: Build LoriOS
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: debian:trixie
+      options: --privileged
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build ISO and IMG
+        run: |
+          apt-get update
+          apt-get install -y sudo
+          bash build-lorios.sh
+
+      - name: Collect files
+        run: |
+          mkdir -p out
+          cp /root/lorios/*.iso /root/lorios/*.img /root/lorios/*.sha256 out/
+          ls -lh out
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: LoriOS
+          path: out/*
