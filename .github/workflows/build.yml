@@ -15,7 +15,7 @@ jobs:
         run: |
           apt-get update
           apt-get install -y sudo
-          bash build-lorios.sh
+          sudo bash build-lorios.sh
 
       - name: Collect files
         run: |
