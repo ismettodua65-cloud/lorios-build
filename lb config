@@ -16,8 +16,9 @@ lb config \
   --architectures amd64 \
   --archive-areas "main non-free-firmware" \
   --apt-recommends false \
-  --binary-images iso-hybrid \
-  --debian-installer none \
+  --binary-images iso \
+--bootloader syslinux \
+--debian-installer none \
   --iso-application "LoriOS" \
   --iso-volume "LoriOS" \
   --image-name "LoriOS" \
