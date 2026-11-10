@@ -6,7 +6,7 @@ set -euo pipefail
 SRC="$(cd "$(dirname "$0")" && pwd)"
 
 apt update
-apt install -y live-build debootstrap squashfs-tools xorriso
+apt install -y live-build debootstrap squashfs-tools xorriso isolinux syslinux-common
 
 mkdir -p ~/lorios && cd ~/lorios
 lb clean --purge || true
